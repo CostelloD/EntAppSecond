@@ -1,0 +1,85 @@
+﻿@page
+@model EntAppSecond.Pages.Students.CreateModel
+@{
+    ViewData["Title"] = "Data Validation";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Create</title>
+
+</head>
+<body>
+
+    <form method="post">
+
+
+        <label asp-for=Student.FirstName></label>
+        <input asp-for=Student.FirstName />
+        <br />
+        <br />
+
+        <label asp-for=Student.SecondName></label>
+        <input asp-for=Student.SecondName />
+        <br />
+        <br />
+
+        <label asp-for=Student.StudentID></label>
+        <input asp-for=Student.StudentID />
+        <br />
+        <br />
+
+        <label asp-for=Student.NumberOfModules></label>
+        <input asp-for=Student.NumberOfModules />
+        <br />
+        <br />
+
+        <label asp-for=Student.DateOfBirth></label>
+        <input asp-for=Student.DateOfBirth />
+        <br />
+        <br />
+
+        <label asp-for=Student.Height></label>
+        <input asp-for=Student.Height />
+        <br />
+        <br />
+
+        <label asp-for=Student.Email></label>
+        <input asp-for=Student.Email />
+        <br />
+        <br />
+
+        <label asp-for=Student.EmailConfirm></label>
+        <input asp-for=Student.EmailConfirm />
+        <br />
+        @Model.Message
+        <br />
+
+        <label asp-for=Student.CarRegister></label>
+        <input asp-for=Student.CarRegister />
+        <br />
+        <br />
+
+        <label asp-for=Student.Phone></label>
+        <input asp-for=Student.Phone />
+        <br />
+        <br />
+
+        <div asp-validation-summary="All"></div>
+        <span asp-validation-for="Student.StudentID"></span>
+
+        <br />
+        <br />
+
+        <button type="submit">Press Me</button>
+
+
+    </form>
+
+
+
+</body>
+</html>

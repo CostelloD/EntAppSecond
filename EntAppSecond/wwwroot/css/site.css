@@ -17,3 +17,11 @@ body {
     background-color:lightblue;
     border: solid;
 }
+
+.field-validation-error {
+    color: forestgreen;
+}
+
+.validation-summary-errors {
+    color: red;
+}
