@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using EntAppSecond.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Http;
 
 namespace EntAppSecond.Pages.Students
 {
@@ -12,23 +13,35 @@ namespace EntAppSecond.Pages.Students
     {
 
 
+        private readonly StudentContext _db;
+
+        public CreateModel(StudentContext db)
+        {
+            _db = db;
+        }
+
         [BindProperty]
-        public Student Student { get; set; }
+        public Student Student { get; set; } = new Student();
 
         public string Message { get; set; }
 
-        public void OnPost()
+
+        public async Task<IActionResult> OnPostAsync()
         {
-            if (Student.Email == Student.EmailConfirm)
+            if (ModelState.IsValid)
             {
-                Message = "";
+                _db.Students.Add(Student);
+                await _db.SaveChangesAsync();
+                return RedirectToPage("ListStudents");
             }
 
             else
             {
-                Message = "Email does not Match, Please enter again";
+                return Page();
             }
         }
+
+
 
         public void OnGet()
         {

@@ -24,38 +24,5 @@ namespace EntAppSecond.Models
         [MinLength(3, ErrorMessage = "First Name must contain at least three characters")]
         public string SecondName { get; set; } = "";
 
-
-        [Required]
-        [DataType(DataType.Date)]
-        public DateTime DateOfBirth { get; set; }
-
-        [Required]
-        [RegularExpression(@"^[1-9][0-9]*$", ErrorMessage = "Number of Modules cannot be Zero")]
-        public int NumberOfModules { get; set; }
-
-
-        [Required]
-        [RegularExpression(@"^[5-9][0-9]|1[0-9][0 - 9]|2[0-4][0-9]|250", ErrorMessage ="Height must be between 50 and 200 cm") ]
-        public int Height { get; set; }
-
-        [Required]
-        [DataType(DataType.EmailAddress)]
-        public string Email { get; set; }
-
-        [Required]
-        [DataType(DataType.EmailAddress)]
-        public string EmailConfirm { get; set; }
-
-        [Required]
-        [Display(Name ="Car Registration (Connaught)")]
-        [RegularExpression(@"^(1[0-9][1-2]|[0-9][0-9])((RN)|(rn)|(MO)|(mo)|(LM)|(lm)|G|g|(SO)|(so))\d{1,6}", 
-            ErrorMessage = "Not a valid Registration number - please check and try again")]
-        public string CarRegister { get; set; }
-
-
-        [Required]
-        [Display(Name = "Mobile Phone Number")]
-        [RegularExpression(@"^(\D?)(\d{2,5})?\D?\d{2,3}(\D?)(\D?)\d{7}", ErrorMessage = "Not a Valid Mobile Number, please check and try again")]
-        public string Phone { get; set; }
     }
 }

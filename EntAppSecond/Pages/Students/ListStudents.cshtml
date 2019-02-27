@@ -1,0 +1,44 @@
+﻿@page
+@model EntAppSecond.Pages.Students.ListStudentsModel
+@{
+    ViewData["Title"] = "Data Validation";
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>ListStudents</title>
+</head>
+<body>
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                @*<th>Action</th>*@
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var student in Model.Students)
+            {
+                // list out each of the properties.
+                <tr>
+                    <td>@student.StudentID</td>
+                    <td>@student.FirstName</td>
+                    <td>@student.SecondName</td>
+
+                    @*<td> <a asp-page="StudentDetails" asp-route-id="@student.StudentID">Details</a> </td>*@
+                </tr>
+            }
+        </tbody>
+    </table>
+
+
+
+</body>
+</html>
